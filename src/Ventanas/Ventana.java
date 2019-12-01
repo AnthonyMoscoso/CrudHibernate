@@ -26,6 +26,7 @@ import CRUD.Lanzador;
 import CRUD.Read;
 import CRUD.Update;
 import Hibernate.Departamentos;
+import Jasper.Jasper;
 import Singleton.HibernateUtil;
 
 import javax.swing.JTabbedPane;
@@ -107,6 +108,16 @@ public class Ventana {
 		
 		JButton btnApartamento = new JButton("Departamento");
 		panel_1.add(btnApartamento);
+		
+		JButton btnJasper = new JButton("Jasper");
+		btnJasper.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Jasper jasper = new Jasper();
+				String [] args = {""};
+				jasper.main(args);
+			}
+		});
+		panel_1.add(btnJasper);
 		btnApartamento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				abrirDepartamento();
